@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Git basics</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Montserrat;
+        }
+        .container {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background: #00171F;
+            color: white;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        .bts-gomb {
+            border-radius: 10px;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            background: #00A7E1;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title-container">
+            <h1>Behind the screens vol 3.</h1>
+            <h2>Git alapok</h2>
+            <button class="bts-gomb" id="bts-gomb" onclick="btsButtonAction()">
+                Kattins rá!
+            </button>
+            <div id="bts-button-result">
+                <p>Gombnyomások száma: <span id="bts-gombnyomas-szama">0</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      const btsGombElem= document.getElementById('bts-gomb');
+      const btsGombnyomasSzamaElem = document.getElementById("bts-gombnyomas-szama")
+      let gombnyomasSzama = 0
+
+      function btsButtonAction () {
+        gombnyomasSzama += 1;
+        btsGombnyomasSzamaElem.innerHTML = gombnyomasSzama;
+
+        if (gombnyomasSzama >= 5 && gombnyomasSzama <= 10) {
+          btsGombnyomasSzamaElem.style.color = '#00A7E1'
+        } else {
+          btsGombnyomasSzamaElem.style.color = '#FFFFFF'
+        }
+      }
+    </script>
+</body>
+</html>
